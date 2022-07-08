@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=zh_CN>
 
 <head>
     <link rel="shortcut icon" type=image/x-icon href=favicon.ico>
@@ -15,7 +15,7 @@
         <div class="row text-center">
             <h1>Lock UI</h1>
         </div>
-        <h2 class="mt-2 text-center">To lock interface insert a password twice.</h2>
+        <h2 class="mt-2 text-center">要锁定界面，请输入两次密码</h2>
         <form action=/lock method=POST>
             <div class="form-group row"> <label for=lockpass class=col-3>Password</label>
                 <div class=col-9> <input type=password class=form-control name=lockpass id=lockpass value maxlength=64
@@ -25,17 +25,16 @@
                 <div class=col-9> <input type=password class=form-control name=lockpass2 id=lockpass2 value maxlength=64
                         placeholder=Repeat> </div>
             </div>
-            <div class="form-group row col-9 offset-3"> <small class="form-text text-muted">Both fields empty will
-                    remove the password</small> </div>
+            <div class="form-group row col-9 offset-3"> <small class="form-text text-muted">两个字段均为空将删除密码</small> </div>
             <div class="form-group row col-4 offset-4 mt-4"> <input type=hidden name=x value=y> <input type=submit
-                    value=Save class="btn btn-primary"> </div>
+                    value=保存 class="btn btn-primary"> </div>
         </form>
         <form action=/lock method=POST style="display: %s;">
             <div class="form-group row col-4 offset-4 mt-2"> <input type=hidden name=lockpass value> <input type=hidden
-                    name=lockpass2 value> <input type=hidden name=x value=y> <input type=submit value="Remove password"
+                    name=lockpass2 value> <input type=hidden name=x value=y> <input type=submit value="删除密码"
                     class="btn btn-warning"> </div>
         </form>
-        <div class="form-group row col-4 offset-4 mt-5"> <a href=/ class="btn btn-light">Back</a> </div>
+        <div class="form-group row col-4 offset-4 mt-5"> <a href=/ class="btn btn-light">返回</a> </div>
     </div>
 </body>
 

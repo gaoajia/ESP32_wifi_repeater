@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=zh_CN>
 
 <head>
     <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
@@ -7,18 +7,17 @@
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
     <meta content="width=device-width, initial-scale=1" name=viewport>
     <link href=styles-9ee3c4491d35b3c1d830fa9da31c7861.css rel=stylesheet>
-    <title>Configuration</title>
+    <title>配置</title>
 </head>
 
 <body>
     <div class=container>
         <div class="row text-center p-3">
-            <h1>ESP32 NAT Router Config <button class="btn btn-light float-end" data-bs-target=#information
+            <h1>ESP32 NAT路由器配置 <button class="btn btn-light float-end" data-bs-target=#information
                     data-bs-toggle=modal title=About type=button>?</button></h1>
         </div>
         <form action=apply method=POST> <input name=func type=hidden value=config>
-            <h2>AP Settings (the new network)</h2> <span class=text-info><span id=clients>%d</span> client(s)
-                connected</span>
+            <h2>AP设置(新网络)</h2> <span class=text-info><span id=clients>%d</span> 客户端连接</span>
             <div class="form-group row"> <label class=col-3 for=ap_ssid>SSID</label>
                 <div class=col-9> <input class=form-control id=ap_ssid maxlength=32 name=ap_ssid
                         placeholder="SSID of the new network" type=text value=%s> </div>
@@ -31,10 +30,9 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group row col-9 offset-3"> <small class="form-text text-muted">Password less than 8 chars =
-                    open</small> </div>
-            <h2 class=mt-2>STA Settings (uplink WiFi network)</h2> <span class=text-%s id=sta><span id=symbol>%s</span>
-                (signal strength: <span id=db>%s</span> db)</span>
+            <div class="form-group row col-9 offset-3"> <small class="form-text text-muted">密码小于8个字符=开放</small> </div>
+            <h2 class=mt-2>STA设置(上行WiFi网络)</h2> <span class=text-%s id=sta><span id=symbol>%s</span>
+                (信号强度: <span id=db>%s</span> db)</span>
             <div class="form-group row"> <label class=col-3 for=ssid>SSID</label>
                 <div class=col-9> <input class=form-control id=ssid maxlength=32 name=ssid
                         placeholder="SSID of the existing network" type=text value=%s> </div>
@@ -48,27 +46,27 @@
                 </div> <input class=form-control name=x type=hidden value=x>
             </div>
             <div class="form-group row col-4 offset-4 mt-4"> <input class="btn btn-primary" type=submit
-                    value="Apply changes"> </div>
+                    value="保存"> </div>
         </form>
-        <h2 class=mt-2>Device Management</h2>
+        <h2 class=mt-2>设备管理</h2>
         <form action=scan method=GET>
-            <div class="form-group row col-4 offset-4 mt-2"> <input class="btn btn-light" type=submit value="Wifi Scan">
+            <div class="form-group row col-4 offset-4 mt-2"> <input class="btn btn-light" type=submit value="扫描网络">
             </div>
         </form>
         <form action=apply method=POST>
             <div class="form-group row col-4 offset-4 mt-2"> <input name=func type=hidden value=reboot> <input
-                    class="btn btn-light" type=submit value=reboot> </div>
+                    class="btn btn-light" type=submit value=重启设备    > </div>
         </form>
         <form action=lock method=GET>
             <div class="form-group row col-4 offset-4 mt-2"> <input class="btn btn-light" type=submit
-                    value="Lock Interface"> </div>
+                    value="设置密码"> </div>
         </form>
         <form action=unlock method=GET style="display: %s;">
             <div class="form-group row col-4 offset-4 mt-2"> <input class="btn btn-light" type=submit
-                    value="Relock Interface"> </div>
+                    value="锁定后台"> </div>
         </form>
         <form action=advanced method=GET>
-            <div class="form-group row col-4 offset-4 mt-5"> <input class="btn btn-warning" type=submit value=Advanced>
+            <div class="form-group row col-4 offset-4 mt-5"> <input class="btn btn-warning" type=submit value=高级设置>
             </div>
         </form>
     </div>
@@ -76,16 +74,15 @@
         <div class=modal-dialog>
             <div class=modal-content>
                 <div class=modal-header>
-                    <h5 class=modal-title>About</h5> <button aria-label=Close class=btn-close data-bs-dismiss=modal
+                    <h5 class=modal-title>关于</h5> <button aria-label=Close class=btn-close data-bs-dismiss=modal
                         type=button></button>
                 </div>
                 <div class=modal-body>
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td colspan=2>ESP32 NAT Router is a simple micro controller based range extender. This
-                                    can also be used to open a second (guest) Wifi. <p>This is a spare time project. If
-                                        you have any questions or issues, feel free to ask at the Github project page.
+                                <td colspan=2>
+                                        这是一个基于 ESP32 开发的 WiFi 中继，参考了 ESP32 NAT Router-project ，初衷是打造一个在宿舍使用的廉价的 NAT 路由器，用来连接一些需要联网的智能设备。欢迎在 Github 上面交流。
                                     </p>
                                 </td>
                             </tr>
@@ -103,18 +100,16 @@
                             </tr>
                             <tr>
                                 <td class=text-center colspan=2><a class="btn btn-link"
-                                        href=https://github.com/dchristl/esp32_nat_router_extended target=_blank>Project
-                                        page at GitHub</a></td>
+                                        href=https://github.com/gaoajia/ESP32_wifi_repeater target=_blank> GitHub 项目</a></td>
                             </tr>
                             <tr>
                                 <td class=text-center colspan=2><a class="btn btn-link"
-                                        href=https://www.buymeacoffee.com/dchristl target=_blank>Support my work, just
-                                        buy me coffee</a> </td>
+                                        href=https://www.gaoajia.com/zanzhu.html target=_blank>支持我！</a> </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class=modal-footer> <button class="btn btn-light" data-bs-dismiss=modal type=button>Close</button>
+                <div class=modal-footer> <button class="btn btn-light" data-bs-dismiss=modal type=button>关闭</button>
                 </div>
             </div>
         </div>

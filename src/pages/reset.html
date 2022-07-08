@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=zh_CN>
 
 <head>
 
@@ -9,25 +9,24 @@
         <meta http-equiv=X-UA-Compatible content="IE=edge">
         <meta name=viewport content="width=device-width, initial-scale=1">
         <link rel=stylesheet href=styles-9ee3c4491d35b3c1d830fa9da31c7861.css>
-        <title>Reset</title>
+        <title>重置</title>
     </head>
 </head>
 
 <body>
     <div class=container>
         <div class="row text-center">
-            <h1>Reset Device</h1>
+            <h1>重置设备</h1>
         </div>
         <div class="alert alert-danger mt-2 text-center" role=alert>
-            <h2>This will reset the device's flash memory completely and can not be reverted!<br> All your settings will
-                be lost. You can reconnect by using the default <br>'ESP32_NAT_Router'<br>network and the <a
-                    class=text-danger href=http://192.168.4.1>default url</a> <br><br> Are you sure? </h2>
+            <h2>完全重置设备的闪存，无法恢复！<br>所有设置都将丢失。你可以通过使用默认值重新连接  <br>'ESP32_NAT_Router'<br> <a
+                    class=text-danger href=http://192.168.4.1>网络</a> <br><br> 请谨慎操作！ </h2>
         </div>
         <form action=apply method=POST class=mt-5>
             <div class="form-group row col-4 offset-4 "> <input type=hidden name=func value=erase> <input type=submit
-                    value="Erase flash" class="btn btn-danger"> </div>
+                    value="擦除 flash" class="btn btn-danger"> </div>
         </form>
-        <div class="form-group row col-4 offset-4 mt-5"> <a href=/advanced class="btn btn-light">Back</a> </div>
+        <div class="form-group row col-4 offset-4 mt-5"> <a href=/advanced class="btn btn-light">返回</a> </div>
     </div>
 </body>
 

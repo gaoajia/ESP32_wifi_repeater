@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang=zh_CN>
 
 <head>
     <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
@@ -7,43 +7,37 @@
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
     <meta content="width=device-width, initial-scale=1" name=viewport>
     <link href=styles-9ee3c4491d35b3c1d830fa9da31c7861.css rel=stylesheet>
-    <title>Advanced</title>
+    <title>高级配置</title>
 </head>
 
 <body>
     <div class=container>
         <div class="row text-center p-3">
-            <h1>Advanced configuration</h1>
+            <h1>高级配置</h1>
         </div>
         <form action=apply method=POST> <input name=func type=hidden value=advanced>
-            <h2>Misc</h2>
+            <h2>常规设置</h2>
             <div class="form-group row mt-2">
                 <div class="form-check form-switch"> <input class=form-check-input type=checkbox id=ledenabled
-                        name=ledenabled %s> <label class=form-check-label for=ledenabled>LED enabled</label> </div>
-                <div class="alert alert-light mt-2" role=alert> This enables or disables the on board LED, if available.
-                    Uncheck this option for less power consumption and less disturbing blinking. Of course, you will not
-                    be able to interpret the number of connected devices anymore by this LED. </div>
+                        name=ledenabled %s> <label class=form-check-label for=ledenabled>启用LED</label> </div>
+                <div class="alert alert-light mt-2" role=alert> 启用或禁用板上的LED,如果不勾选这个选项,就可以减少功耗和减少LED闪烁,也不能再通过这个LED来解释连接的设备数量 </div>
             </div>
             <div class="form-group row mt-2">
                 <div class="form-check form-switch"> <input class=form-check-input type=checkbox id=keepalive
-                        name=keepalive %s> <label class=form-check-label for=keepalive>Keep connection alive</label>
+                        name=keepalive %s> <label class=form-check-label for=keepalive>保持连接状态</label>
                 </div>
-                <div class="alert alert-light mt-2" role=alert> Check this option for networks with a forced disconnect
-                    after some inactivity. This will call <a href=https:www.startpage.com>Startpage.com</a> every 5
-                    minutes with a small footprint to keep the connection alive. </div>
+                <div class="alert alert-light mt-2" role=alert> 对于在某些不活动后强制断开的网络，请选中此选项。每隔5分钟会调用一次<a href=https:www.startpage.com>Startpage.com</a>  </div>
             </div>
             <div class="form-group row mt-2 ">
                 <div class="form-check form-switch"> <input class=form-check-input type=checkbox id=wsenabled
-                        name=wsenabled checked> <label class=form-check-label for=wsenabled>Webserver enabled</label>
+                        name=wsenabled checked> <label class=form-check-label for=wsenabled>启用web服务器</label>
                 </div>
-                <div class="alert alert-danger mt-2" role=alert> This enables or disables the webserver. Disables the
-                    this UI for additional security. Use this with caution. If disabled, you will not be able to
-                    configure the device with your browser anymore. </div>
+                <div class="alert alert-danger mt-2" role=alert> 启用或禁用web服务器。禁用这个UI以获得额外的安全。请谨慎使用。如果禁用，你将不能用你的浏览器配置设备了。 </div>
             </div>
-            <h2>DNS override</h2> <span class=text-info>Your current DNS is: %s</span>
+            <h2>DNS覆盖</h2> <span class=text-info>您当前的DNS是: %s</span>
             <div class="form-group row mt-2">
                 <div class=form-check> <input class=form-check-input type=radio name=dns id=default value %s> <label
-                        class=form-check-label for=default> Default from uplink WiFi-network</label> </div>
+                        class=form-check-label for=default> 默认来自上行链路的WiFi网络</label> </div>
                 <div class="form-check mt-2"> <input class=form-check-input type=radio name=dns id=cloudflare
                         value=1.1.1.1 %s> <label class=form-check-label for=cloudflare> 1.1.1.1 (Cloudflare) </label>
                 </div>
@@ -51,42 +45,34 @@
                         value=94.140.14.14 %s> <label class=form-check-label for=adguard> 94.140.14.14 (AdGuard)
                     </label> </div>
                 <div class="form-check mt-2"> <input class=form-check-input type=radio name=dns id=custom value=custom
-                        %s> <label class=form-check-label for=custom> Custom </label> <input class="form-control mt-2"
-                        id=dnsip maxlength=15 name=dnsip placeholder="IPv4 address in format 123.123.123.123" type=text
+                        %s> <label class=form-check-label for=custom> 自定义 </label> <input class="form-control mt-2"
+                        id=dnsip maxlength=15 name=dnsip placeholder="IPv4 地址格式 123.123.123.123" type=text
                         value=%s> </div>
-                <div class="alert alert-warning mt-2" role=alert>This overrides the DNS server of the uplink network.
-                    Changing this leads to more privacy (Cloudflare) and the possibilty to block ads (AdGuard). Use this
-                    with caution if you have to register/login to the uplink network. This can lead to unreachable
-                    sites. After login or registration this can be reactivated. If you define an invalid custom DNS
-                    server, the value will be set back to default one.</div>
+                <div class="alert alert-warning mt-2" role=alert>这将覆盖上行网络的DNS服务器。改变这一点会带来更多的隐私(Cloudflare)和屏蔽广告(AdGuard)的可能性。如果您必须注册/登录到上行网络，请谨慎使用。这可能导致无法访问站点。登录或注册后，这可以重新激活。如果您定义了一个无效的自定义DNS服务器，该值将被重新设置为默认值。</div>
             </div>
-            <h2>MAC override</h2> <span class=text-info>Your current MAC address is: <span
+            <h2>MAC覆盖</h2> <span class=text-info>您当前的MAC是: <span
                     style="text-transform: uppercase;">%s</span></span>
             <div class="form-group row mt-2">
                 <div class=form-check> <input class=form-check-input type=radio id=defaultmac name=custommac
-                        value=default %s> <label class=form-check-label for=defaultmac> Default <span
+                        value=default %s> <label class=form-check-label for=defaultmac> 默认 <span
                             style="text-transform: uppercase;">(%s)</span> </label> </div>
                 <div class="form-check mt-2"> <input class=form-check-input type=radio id=randomMac name=custommac
-                        value=random %s> <label class=form-check-label for=randomMac>Random<span
+                        value=random %s> <label class=form-check-label for=randomMac>随机<span
                             style="text-transform: uppercase;"> (%sXX)</span>.</label> </div>
                 <div class="form-check mt-2"> <input class=form-check-input type=radio id=custommac name=custommac
-                        value=custom %s> <label class=form-check-label for=custommac> Custom </label> <input
+                        value=custom %s> <label class=form-check-label for=custommac> 自定义 </label> <input
                         class="form-control mt-2" id=mac maxlength=17 name=macaddress
-                        placeholder="MAC address in format AB:BC:DE:F1:23:45" type=text value=%s> </div>
-                <div class="alert alert-warning mt-2" role=alert>This overrides the MAC address of the device. Changing
-                    this can be used for networks with MAC limitations. For example limited number of devices or
-                    specific MACs. The valu will be resetted to the default, if you define an invalid address. To bypass
-                    time by device limits in some WiFis (e.g. 30min free per device and day) you can select "Random".
-                    This will change the last part of the default MAC on every reboot.</div>
+                        placeholder="MAC 地址格式 AB:BC:DE:F1:23:45" type=text value=%s> </div>
+                <div class="alert alert-warning mt-2" role=alert>这将覆盖设备的MAC地址。对于有MAC限制的网络，可以改变这一点。例如有限数量的设备或特定的mac。如果您定义了一个无效的地址，值将被重置为默认值。要绕过某些wifi设备的时间限制(例如每台设备每天30分钟的空闲时间)，你可以选择“随机”。这将在每次重启时改变默认MAC的最后一部分</div>
             </div>
             <div class="form-group row col-4 offset-4 mt-4"> <input class="btn btn-primary" type=submit
-                    value="Apply changes"> </div> <input type=hidden value=x name=x>
+                    value="保存应用"> </div> <input type=hidden value=x name=x>
         </form>
         <form action=reset method=GET>
             <div class="form-group row col-4 offset-4 mt-5"> <input class="btn btn-warning" type=submit
-                    value="Erase flash"> </div>
+                    value="擦除 flash"> </div>
         </form>
-        <div class="form-group row col-4 offset-4 mt-5"> <a href=/ class="btn btn-light">Back</a> </div>
+        <div class="form-group row col-4 offset-4 mt-5"> <a href=/ class="btn btn-light">返回</a> </div>
     </div>
     <script src=jquery.js></script>
     <script>
